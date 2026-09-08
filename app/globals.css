@@ -1,38 +1,36 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Ratatune Design System
+   Ratatune Design System — Restored
    Aesthetic: Premium music-tech, editorial, warm accents
    ============================================================ */
 
 @theme inline {
-  /* Core neutrals — warm, rich darks */
-  --color-bg-deepest: #030304;
-  --color-bg-deep: #0a0907;
-  --color-bg-base: #12100d;
-  --color-bg-elev-1: #1a1814;
-  --color-bg-elev-2: #22201b;
-  --color-bg-card: #1c1a16;
-  --color-bg-card-hover: #24211c;
+  /* Core neutrals — deep black with emerald/blue undertones */
+  --color-bg-deepest: #030508;
+  --color-bg-deep: #070a10;
+  --color-bg-base: #0b0f18;
+  --color-bg-elev-1: #111827;
+  --color-bg-elev-2: #161e2e;
+  --color-bg-card: #0e1420;
+  --color-bg-card-hover: #121c2d;
 
   /* Accents */
   --color-accent-emerald: #34d399;
   --color-accent-emerald-dim: #10b981;
-  --color-accent-amber: #f59e0b;
   --color-accent-coral: #ff7a5b;
   --color-accent-rose: #fb7185;
-  --color-accent-cream: #e7d9b7;
 
   /* Text */
   --color-text-primary: #f0f4f8;
   --color-text-secondary: #8a95a8;
   --color-text-tertiary: #5d6577;
-  --color-text-muted: #6b6458;
+  --color-text-muted: #3d475c;
 
-  /* Borders */
-  --color-border-faint: #1c2230;
-  --color-border-soft: #2a3243;
-  --color-border-strong: #3d475c;
+  /* Borders — cool blue/gray tones */
+  --color-border-faint: #1a2235;
+  --color-border-soft: #243049;
+  --color-border-strong: #2d3d56;
 
   /* Typography */
   --font-display: var(--font-syne), "Syne", system-ui, sans-serif;

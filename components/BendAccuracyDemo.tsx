@@ -38,8 +38,6 @@ export default function BendAccuracyDemo() {
 
         {/* Main Pitch Visualizer */}
         <div className="relative">
-          {/* Glow behind */}
-          <div className="absolute -inset-6 bg-gradient-to-b from-accent-emerald/5 via-transparent to-accent-coral/5 blur-2xl rounded-3xl pointer-events-none" />
           <div className="relative">
             <PitchVisualizer />
           </div>

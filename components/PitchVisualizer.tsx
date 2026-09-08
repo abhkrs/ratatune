@@ -118,13 +118,13 @@ export default function PitchVisualizer() {
             Difference
           </div>
           <div className="flex items-baseline gap-2">
-            <div className="measurement-font text-5xl font-bold text-accent-amber leading-none transition-all duration-500">
+            <div className="measurement-font text-5xl font-bold text-accent-coral leading-none transition-all duration-500">
               {current.difference > 0 ? "+" : ""}
               {current.difference.toFixed(2)}
             </div>
-            <div className="measurement-font text-base text-accent-amber/70 pb-2">st</div>
+            <div className="measurement-font text-base text-accent-coral/70 pb-2">st</div>
           </div>
-          <div className="mt-3 font-mono text-xs text-accent-amber">
+          <div className="mt-3 font-mono text-xs text-accent-coral">
             {current.centsReading}
           </div>
         </div>
@@ -195,9 +195,9 @@ export default function PitchVisualizer() {
               width: `${Math.abs(detectedPos - targetPos)}%`,
             }}
           >
-            <div className="border-t border-l border-r border-accent-amber/40 h-3" />
+            <div className="border-t border-l border-r border-accent-coral/40 h-3" />
             <div className="text-center mt-1">
-              <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-accent-amber">
+              <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-accent-coral">
                 {current.centsReading}
               </span>
             </div>
