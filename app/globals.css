@@ -1,12 +1,10 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Ratatune Design System — Restored
-   Aesthetic: Premium music-tech, editorial, warm accents
+   Ratatune Design System
    ============================================================ */
 
 @theme inline {
-  /* Core neutrals — dark, minimal blue tint */
   --color-bg-deepest: #020304;
   --color-bg-deep: #050608;
   --color-bg-base: #07090e;
@@ -15,37 +13,25 @@
   --color-bg-card: #080a10;
   --color-bg-card-hover: #0b0e14;
 
-  /* Accents */
   --color-accent-emerald: #34d399;
-  --color-accent-emerald-dim: #10b981;
   --color-accent-coral: #ff7a5b;
-  --color-accent-rose: #fb7185;
 
-  /* Text */
   --color-text-primary: #f0f4f8;
   --color-text-secondary: #8a95a8;
   --color-text-tertiary: #5d6577;
   --color-text-muted: #3d475c;
 
-  /* Borders — subtle cool gray */
   --color-border-faint: #1a2030;
   --color-border-soft: #243040;
   --color-border-strong: #2d3a4c;
 
-  /* Typography */
   --font-display: var(--font-syne), "Syne", system-ui, sans-serif;
   --font-body: var(--font-sans), "Plus Jakarta Sans", system-ui, sans-serif;
   --font-mono: var(--font-mono), "Space Mono", ui-monospace, monospace;
 
-  /* Easings */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
-
-/* ============================================================
-   Base
-   ============================================================ */
 
 html {
   scroll-behavior: smooth;
@@ -58,19 +44,13 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: 1.1;
   letter-spacing: -0.02em;
-  font-weight: 700;
 }
-
-/* ============================================================
-   Layout
-   ============================================================ */
 
 .section-container {
   max-width: 1280px;
@@ -98,78 +78,75 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
 }
 
-/* ============================================================
-   Keyframes
-   ============================================================ */
+.text-balance {
+  text-wrap: balance;
+}
 
 @keyframes pulse-ring {
-  0% {
-    box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.45);
-  }
-  100% {
-    box-shadow: 0 0 0 14px rgba(52, 211, 153, 0);
-  }
+  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.45); }
+  100% { box-shadow: 0 0 0 14px rgba(52, 211, 153, 0); }
 }
 
 @keyframes pulse-dot {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes hero-fade-1 { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-fade-2 { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-fade-3 { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-fade-4 { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes nav-link-reveal { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  50% {
-    opacity: 0.5;
-    transform: scale(0.85);
+  .hero-enter-1, .hero-enter-2, .hero-enter-3, .hero-enter-4,
+  .nav-link-reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ── Section label (uniform eyebrow) ── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: 1.25rem;
 }
 
-@keyframes hero-fade-1 {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes hero-fade-2 {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes hero-fade-3 {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes hero-fade-4 {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+.section-label::before {
+  content: "";
+  display: block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--color-accent-emerald);
+  opacity: 0.5;
+  flex-shrink: 0;
 }
 
-/* ============================================================
-    Component Primitives
-    ============================================================ */
-
-/* Hero staggered entrance animations */
-.hero-enter-1 { animation: hero-fade-1 0.6s var(--ease-soft) both; }
-.hero-enter-2 { animation: hero-fade-2 0.7s var(--ease-soft) 0.1s both; }
-.hero-enter-3 { animation: hero-fade-3 0.6s var(--ease-soft) 0.25s both; }
-.hero-enter-4 { animation: hero-fade-4 0.8s var(--ease-soft) 0.2s both; }
-
-/* Panel with corner ticks */
-.panel-ticked {
-  background: linear-gradient(180deg, var(--color-bg-elev-1) 0%, var(--color-bg-elev-2) 100%);
+/* ── Panel card (single border + corner ticks) ── */
+.panel-card {
+  background: linear-gradient(160deg, var(--color-bg-elev-1) 0%, var(--color-bg-elev-2) 100%);
   border: 1px solid var(--color-border-faint);
-  border-radius: 4px;
+  border-radius: 1rem;
+  box-shadow: inset 0 1px 0 rgba(240, 244, 248, 0.04), 0 16px 40px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
   position: relative;
 }
 
-.panel-ticked::before,
-.panel-ticked::after {
+.panel-card::before,
+.panel-card::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -177,69 +154,81 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-accent-emerald);
   border-style: solid;
   border-width: 0;
-  opacity: 0.6;
+  opacity: 0.4;
   pointer-events: none;
 }
 
-.panel-ticked::before {
+.panel-card::before {
   top: -1px;
   left: -1px;
   border-top-width: 1px;
   border-left-width: 1px;
 }
 
-.panel-ticked::after {
+.panel-card::after {
   bottom: -1px;
   right: -1px;
   border-bottom-width: 1px;
   border-right-width: 1px;
 }
 
-/* Stripe top accent */
-.stripe-top {
-  position: relative;
-  overflow: hidden;
+/* ── Glass card (modal, overlays) ── */
+.glass-card {
+  background: rgba(8, 10, 16, 0.8);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(240, 244, 248, 0.08);
+  box-shadow: 0 0 0 1px rgba(240, 244, 248, 0.04), 0 32px 80px rgba(2, 3, 5, 0.7), inset 0 1px 0 rgba(240, 244, 248, 0.06);
+  border-radius: 1.25rem;
 }
 
-.stripe-top::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--stripe-color, var(--color-accent-emerald));
-}
-
-/* Primary button */
-.btn-primary {
+/* ── Magnetic primary button ── */
+.btn-magnetic {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.625rem;
-  padding: 0.95rem 1.75rem;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem 1rem 1.375rem;
   background: var(--color-accent-emerald);
   color: #04130c;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.9375rem;
-  border-radius: 2px;
+  border-radius: 9999px;
   border: none;
   cursor: pointer;
   letter-spacing: -0.01em;
-  transition: all 0.25s var(--ease-soft);
+  transition: transform 0.4s var(--ease-out-expo), background 0.3s var(--ease-soft);
+  will-change: transform;
+  position: relative;
 }
 
-.btn-primary:hover {
+.btn-magnetic:hover {
   background: #5ce5a8;
   transform: translateY(-2px);
 }
 
-.btn-primary:active {
-  transform: translateY(0);
+.btn-magnetic:active {
+  transform: scale(0.97) translateY(0);
 }
 
-/* Ghost button */
+.btn-magnetic .btn-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background: rgba(4, 19, 12, 0.12);
+  transition: transform 0.4s var(--ease-out-expo), background 0.3s var(--ease-soft);
+  flex-shrink: 0;
+}
+
+.btn-magnetic:hover .btn-icon-wrap {
+  transform: translate(2px, -2px) scale(1.1);
+  background: rgba(4, 19, 12, 0.2);
+}
+
+/* ── Ghost link button ── */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -252,7 +241,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   cursor: pointer;
   position: relative;
-  transition: color 0.2s var(--ease-soft);
+  transition: color 0.3s var(--ease-soft);
 }
 
 .btn-ghost::after {
@@ -265,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
   background: currentColor;
   transform: scaleX(0.3);
   transform-origin: left;
-  transition: transform 0.3s var(--ease-soft);
+  transition: transform 0.35s var(--ease-out-expo);
 }
 
 .btn-ghost:hover {
@@ -276,34 +265,32 @@ h1, h2, h3, h4, h5, h6 {
   transform: scaleX(1);
 }
 
-/* Tag / eyebrow */
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-accent-emerald);
-  padding: 0.375rem 0.75rem;
-  background: rgba(52, 211, 153, 0.08);
-  border: 1px solid rgba(52, 211, 153, 0.25);
-  border-radius: 2px;
+/* ── Noise overlay ── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
 }
 
-.tag::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background: var(--color-accent-emerald);
-  border-radius: 50%;
-  animation: pulse-dot 2s ease-in-out infinite;
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 1.5px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-/* Section divider */
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-border-soft), transparent);
+/* ── Hero staggered animations ── */
+.hero-enter-1 { animation: hero-fade-1 0.6s var(--ease-soft) both; }
+.hero-enter-2 { animation: hero-fade-2 0.7s var(--ease-soft) 0.1s both; }
+.hero-enter-3 { animation: hero-fade-3 0.6s var(--ease-soft) 0.25s both; }
+.hero-enter-4 { animation: hero-fade-4 0.8s var(--ease-soft) 0.2s both; }
+
+/* ── Nav link reveal ── */
+.nav-link-reveal {
+  animation: nav-link-reveal 0.5s var(--ease-out-expo) both;
 }

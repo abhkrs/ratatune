@@ -1,39 +1,11 @@
-import { Target, Ruler, RefreshCw } from "lucide-react";
-
-const benefits = [
-  {
-    icon: Target,
-    title: "Stop guessing",
-    description: "Know whether you landed above or below the target.",
-    accent: "emerald",
-    iconColor: "#34d399",
-  },
-  {
-    icon: Ruler,
-    title: "See the difference",
-    description: "Turn an audible feeling into a measurable pitch difference.",
-    accent: "coral",
-    iconColor: "#ff7a5b",
-  },
-  {
-    icon: RefreshCw,
-    title: "Practice with feedback",
-    description: "Use the result immediately while the mistake is still fresh.",
-    accent: "emerald",
-    iconColor: "#34d399",
-  },
-];
-
 export default function Benefits() {
   return (
-    <section className="relative py-28 md:py-36 bg-bg-elev-1 border-y border-border-faint">
+    <section className="relative py-32 md:py-44 bg-bg-elev-1 overflow-hidden">
       <div className="section-container relative z-10">
         {/* Header */}
-        <div className="mb-16">
-          <span className="tag">
-            The Value
-          </span>
-          <h2 className="display-text text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.02] text-text-primary mb-6">
+        <div className="mb-20">
+          <span className="section-label">Value</span>
+          <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-5 text-balance">
             Know what to adjust
             <br />
             <span className="italic font-display font-medium text-accent-emerald">
@@ -42,38 +14,40 @@ export default function Benefits() {
           </h2>
         </div>
 
-        {/* Benefit Cards */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            return (
-              <div
-                key={benefit.title}
-                className="relative"
-                style={{ transitionDelay: `${200 + index * 150}ms` }}
-              >
-                <div className="relative overflow-hidden">
-                  <div className="stripe-top" style={{ "--stripe-color": benefit.accent === "emerald" ? "#34d399" : "#ff7a5b" } as React.CSSProperties}>
-                    <div className="panel-ticked p-6 md:p-8">
-                      {/* Icon */}
-                      <div className="flex h-10 w-10 items-center justify-center mb-6">
-                        <div className={`h-8 w-8 rounded-[6px] bg-${benefit.accent}/10 flex items-center justify-center`}>
-                          <Icon className={`w-5 h-5 text-${benefit.accent}`} />
-                        </div>
-                      </div>
-
-                      <h3 className="font-display text-xl font-bold text-text-primary mb-2">
-                        {benefit.title}
-                      </h3>
-                      <p className="text-base text-text-secondary leading-[1.6]">
-                        {benefit.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+        {/* Benefit Cards — simple grid */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Stop guessing",
+              description: "Know whether you landed above or below the target.",
+            },
+            {
+              title: "See the difference",
+              description: "Turn an audible feeling into a measurable pitch difference.",
+            },
+            {
+              title: "Practice with feedback",
+              description: "Use the result immediately while the mistake is still fresh.",
+            },
+          ].map((benefit, i) => (
+            <div key={benefit.title} className="panel-card p-7 md:p-9">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-accent-emerald/30 opacity-75 animate-[pulse-ring_1.8s_ease-out_infinite]" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-emerald" />
+                </span>
+                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-text-tertiary">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
-            );
-          })}
+              <h3 className="font-display text-xl font-bold text-text-primary mb-2 text-balance">
+                {benefit.title}
+              </h3>
+              <p className="text-sm text-text-secondary leading-[1.65]">
+                {benefit.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

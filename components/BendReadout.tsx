@@ -1,32 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
-interface BendReadoutProps {
-  compact?: boolean;
-}
-
-export default function BendReadout({ compact = false }: BendReadoutProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.classList.add("is-visible");
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
+export default function BendReadout() {
   return (
-    <div ref={ref} className={`panel-ticked p-5 md:p-7 ${compact ? "" : ""}`}>
+    <div className={`panel-card p-5 md:p-7`}>
       {/* Header bar */}
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-border-faint">
         <div className="flex items-center gap-2.5">
@@ -38,9 +14,6 @@ export default function BendReadout({ compact = false }: BendReadoutProps) {
             Live · Bend analysis
           </span>
         </div>
-        <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-text-tertiary">
-          v0.1
-        </span>
       </div>
 
       {/* Main reading block */}

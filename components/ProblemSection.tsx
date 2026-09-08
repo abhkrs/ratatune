@@ -6,25 +6,21 @@ export default function ProblemSection() {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section className="relative py-28 md:py-36 bg-bg-deep overflow-hidden">
-
+    <section className="relative py-32 md:py-44 bg-bg-base overflow-hidden">
       <div className="section-container relative z-10" ref={ref}>
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Left column — copy */}
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           <div className="lg:col-span-7">
             <div
-              className={`mb-8 transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              className={`mb-8 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <span className="tag" data-section-number="[02]">
-                The problem
-              </span>
+              <span className="section-label">The problem</span>
             </div>
 
             <h2
-              className={`display-text text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.02] mb-10 transition-all duration-700 delay-100 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              className={`display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] mb-10 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               You can hear the bend.
@@ -39,58 +35,53 @@ export default function ProblemSection() {
             </h2>
 
             <div
-              className={`space-y-5 text-lg text-text-secondary leading-[1.7] max-w-xl transition-all duration-700 delay-200 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              className={`space-y-5 text-base md:text-lg text-text-secondary leading-[1.75] max-w-xl transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-200 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               <p>
                 Bending is changing the pitch of a note through breath and mouth
-                shape — not a hole or button. The hard part is quantifying how
+                shape - not a hole or button. The hard part is quantifying how
                 far the note moved.
               </p>
               <p>
-                When you&apos;re practicing, &ldquo;that sounds a little off&rdquo;
-                isn&apos;t enough. You need the precise distance between your
+                When you are practicing, &ldquo;that sounds a little off&rdquo;
+                is not enough. You need the precise distance between your
                 note and the target.
               </p>
             </div>
           </div>
 
-          {/* Right column — visualization */}
           <div
-            className={`lg:col-span-5 transition-all duration-700 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            className={`lg:col-span-5 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-300 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <div className="panel-ticked p-6 md:p-8">
+            <div className="panel-card p-6 md:p-8">
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-border-faint">
-                <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-text-secondary">
+                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-text-secondary">
                   Pitch trace
                 </span>
-                <span className="font-mono text-[10px] tracking-[0.22em] uppercase text-text-tertiary">
+                <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-text-tertiary">
                   1200 ms
                 </span>
               </div>
 
-              {/* Visualization */}
               <div className="relative h-48">
-                {/* horizontal target line */}
                 <div className="absolute top-1/2 left-0 right-0 h-px bg-text-secondary/25" />
                 <div className="absolute top-1/2 -translate-y-1/2 left-0 flex items-center gap-2">
                   <span className="w-2 h-2 bg-text-primary" />
-                  <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-text-secondary">
-                    Target −2 st
+                  <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-text-secondary">
+                    Target -2 st
                   </span>
                 </div>
 
-                {/* Scale ticks */}
                 <div className="absolute inset-y-0 left-0 right-0 flex justify-between pointer-events-none">
                   {[0, 1, 2, 3, 4].map((i) => (
                     <div key={i} className="w-px h-full bg-border-faint" />
                   ))}
                 </div>
 
-                {/* SVG path */}
                 <svg
                   className="absolute inset-0 w-full h-full"
                   viewBox="0 0 100 100"
@@ -115,7 +106,6 @@ export default function ProblemSection() {
                   />
                 </svg>
 
-                {/* End marker */}
                 <div
                   className={`absolute top-[80%] right-[2%] -translate-y-1/2 transition-all duration-1000 delay-700 ${
                     isVisible ? "opacity-100 scale-100" : "opacity-0 scale-50"
@@ -124,24 +114,23 @@ export default function ProblemSection() {
                   <div className="relative -translate-x-1/2 -translate-y-1/2">
                     <div className="w-3 h-3 bg-accent-coral rotate-45" />
                   </div>
-                  <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[10px] tracking-[0.18em] uppercase text-accent-coral whitespace-nowrap">
+                  <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[10px] tracking-[0.16em] uppercase text-accent-coral whitespace-nowrap">
                     Your bend
                   </span>
                 </div>
               </div>
 
-              {/* Result */}
               <div className="mt-8 pt-6 border-t border-border-faint grid grid-cols-2 gap-6">
                 <div>
-                  <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-text-tertiary mb-2">
+                  <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-text-tertiary mb-2">
                     Detected
                   </div>
                   <div className="measurement-font text-2xl font-bold text-text-primary">
-                    −1.97<span className="text-sm text-text-secondary ml-1">st</span>
+                    -1.97<span className="text-sm text-text-secondary ml-1">st</span>
                   </div>
                 </div>
                 <div>
-                  <div className="font-mono text-[10px] tracking-[0.22em] uppercase text-text-tertiary mb-2">
+                  <div className="font-mono text-[10px] tracking-[0.2em] uppercase text-text-tertiary mb-2">
                     Difference
                   </div>
                   <div className="measurement-font text-2xl font-bold text-accent-coral">

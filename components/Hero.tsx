@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
 import BendReadout from "./BendReadout";
 
 interface HeroProps {
@@ -9,7 +8,7 @@ interface HeroProps {
 
 export default function Hero({ onCtaClick }: HeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center pt-20 pb-24 overflow-hidden">
       {/* Background layers */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -33,7 +32,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
           {/* Left: Copy — 7 cols, asymmetric */}
           <div className="lg:col-span-7 pt-2 lg:pt-10">
             <div className="hero-enter-1 flex items-center gap-3 mb-8">
-              <span className="tag">Pre-launch</span>
+              <span className="section-label" style={{ marginBottom: 0 }}>Pre-launch</span>
             </div>
 
             <h1 className="hero-enter-2 display-text text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.1] mb-8 md:mb-10">
@@ -51,14 +50,16 @@ export default function Hero({ onCtaClick }: HeroProps) {
 
             <p className="hero-enter-3 text-lg md:text-xl text-text-secondary leading-[1.65] mb-10 max-w-xl">
               Ratatune listens through your microphone, isolates the bend you
-              just played, and returns the exact pitch you reached — measured in
+              just played, and returns the exact pitch you reached - measured in
               cents against the target. No more guessing whether you landed.
             </p>
 
             <div className="hero-enter-3 flex flex-wrap items-center gap-5">
               <button onClick={onCtaClick} className="btn-primary group">
                 Get Early Access
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <svg width="13" height="13" viewBox="0 0 12 12" fill="none" className="ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">
+                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H3.5M9.5 2.5V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
               <button
                 onClick={() => {

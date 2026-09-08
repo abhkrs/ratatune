@@ -44,7 +44,7 @@ export default function PitchVisualizer() {
   const detectedPos = targetPos + current.difference * 8;
 
   return (
-    <div className="panel-ticked p-6 md:p-10">
+    <div className="panel-card p-6 md:p-10">
       {/* Top bar */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-border-faint">
         <div className="flex items-center gap-3">
