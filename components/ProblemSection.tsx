@@ -21,16 +21,10 @@ export default function ProblemSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-5 text-balance">
-              You can hear the bend.
+            <h2 className="section-head mb-5 text-balance">
+              You can hear the bend, but can you tell
               <br />
-              <span className="text-text-secondary italic font-display font-medium">
-                But can you tell exactly
-              </span>
-              <br />
-              <span className="text-text-secondary italic font-display font-medium">
-                where it landed?
-              </span>
+              <span className="highlight">exactly where it landed?</span>
             </h2>
             <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl">
               Bending is changing the pitch of a note through breath and mouth

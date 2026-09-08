@@ -33,14 +33,12 @@ export default function EarlyAccessCTA({ onCtaClick }: EarlyAccessCTAProps) {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="display-text text-[clamp(1.75rem,4vw,3.25rem)] leading-[1.05] text-text-primary mb-5 text-balance">
-              Be among the first
+            <h2 className="section-head mb-5 text-balance">
+              Be among the first to
               <br />
-              <span className="italic font-display font-medium text-accent-emerald">
-                to try bend accuracy.
-              </span>
+              <span className="highlight">try bend accuracy.</span>
             </h2>
-            <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl">
+          <p className="section-body">
               Ratatune is currently in pre-launch development. Leave your email
               to get notified as soon as early access opens.
             </p>

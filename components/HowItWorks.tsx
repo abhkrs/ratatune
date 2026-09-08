@@ -61,15 +61,12 @@ export default function HowItWorks() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-6 text-balance">
-              Ratatune tells you where
-              <br />
-              your bend{" "}
-              <span className="italic font-display font-medium text-accent-emerald">
-                actually landed.
-              </span>
+            <h2 className="section-head mb-6 text-balance">
+              Ratatune tells you 
+              <span className="highlight block">where your bend </span>
+              actually landed.
             </h2>
-            <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl">
+            <p className="section-body">
               No special microphone. No instrument-specific tuning. Just play
               the bend, and within a moment you&apos;ll know the precise pitch
               you reached compared to where it should have been.

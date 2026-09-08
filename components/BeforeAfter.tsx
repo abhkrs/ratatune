@@ -21,10 +21,8 @@ export default function BeforeAfter() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-5 text-balance">
-              From guesswork
-              <br />
-              to informed adjustment
+            <h2 className="section-head mb-5 text-balance">
+              From guesswork to <span className="highlight">informed adjustment.</span>
             </h2>
             <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl">
               The value is not just in seeing a number. It is knowing what

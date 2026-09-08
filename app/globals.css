@@ -112,6 +112,31 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* ── Section heading (uniform across all sections) ── */
+.section-head {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
+  line-height: 1.02;
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
+
+.section-head .highlight {
+  color: var(--color-accent-emerald);
+  font-weight: 800;
+}
+
+/* ── Section body (uniform across all sections) ── */
+.section-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  max-width: 42rem;
+}
+
 /* ── Section label (uniform eyebrow) ── */
 .section-label {
   display: inline-flex;

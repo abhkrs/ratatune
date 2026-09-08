@@ -7,12 +7,10 @@ export default function Benefits() {
             <span className="section-label">Value</span>
           </div>
           <div className="lg:col-span-9">
-            <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-5 text-balance">
+            <h2 className="section-head mb-5 text-balance">
               Know what to adjust
               <br />
-              <span className="italic font-display font-medium text-accent-emerald">
-                on the next bend.
-              </span>
+              <span className="highlight">on the next bend.</span>
             </h2>
           </div>
         </div>
