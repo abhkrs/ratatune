@@ -10,12 +10,9 @@ interface EarlyAccessModalProps {
 
 export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalProps) {
   const [email, setEmail] = useState("");
-  const [experience, setExperience] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError] = useState("");
   const emailRef = useRef<HTMLInputElement>(null);
 
-  // Focus email input on open
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => emailRef.current?.focus(), 100);
@@ -23,15 +20,7 @@ export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalPr
   }, [isOpen]);
 
   const handleSubmit = () => {
-    setError("");
-    if (!email.trim()) {
-      setError("Email is required.");
-      return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError("Please enter a valid email address.");
-      return;
-    }
+    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
     setSubmitted(true);
   };
 
@@ -45,13 +34,12 @@ export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalPr
         aria-modal="true"
         aria-labelledby="modal-title"
       >
-        {/* Close button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-1.5 text-text-secondary hover:text-text-primary transition-colors"
           aria-label="Close modal"
         >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
             <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
           </svg>
         </button>
@@ -90,53 +78,18 @@ export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalPr
                   id="email"
                   type="email"
                   value={email}
-                  onChange={(e) => { setEmail(e.target.value); setError(""); }}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   autoComplete="email"
                   required
                   aria-required="true"
-                  aria-invalid={!!error}
-                  aria-describedby={error ? "email-error" : undefined}
                   className="w-full px-4 py-3 rounded-lg border border-border-faint bg-bg-elev-1 text-text-primary placeholder:text-text-secondary/40 text-sm outline-none transition-all focus:border-accent-emerald/50"
                 />
-                {error && (
-                  <p id="email-error" className="mt-1.5 text-xs text-accent-coral" role="alert">
-                    {error}
-                  </p>
-                )}
               </div>
 
-              <div>
-                <label htmlFor="experience" className="block text-xs font-semibold tracking-wider uppercase text-text-secondary mb-1.5">
-                  How long have you been playing harmonica?{" "}
-                  <span className="text-text-tertiary normal-case tracking-normal font-normal">
-                    (optional)
-                  </span>
-                </label>
-                <select
-                  id="experience"
-                  value={experience}
-                  onChange={(e) => setExperience(e.target.value)}
-                  className="w-full px-4 py-3 rounded-lg border border-border-faint bg-bg-elev-1 text-text-primary text-sm outline-none transition-all focus:border-accent-emerald/50 appearance-none cursor-pointer"
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a95a8' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "right 1rem center",
-                  }}
-                >
-                  <option value="">Select...</option>
-                  <option value="<1">Less than 1 year</option>
-                  <option value="1-3">1–3 years</option>
-                  <option value="3-5">3–5 years</option>
-                  <option value="5+">5+ years</option>
-                </select>
-              </div>
-
-              <div className="flex justify-center mt-6">
-                <CTAButton onClick={handleSubmit} className="mt-2">
-                  Request Early Access
-                </CTAButton>
-              </div>
+              <CTAButton onClick={handleSubmit}>
+                Request Early Access
+              </CTAButton>
             </div>
           </>
         )}

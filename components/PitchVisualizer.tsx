@@ -71,7 +71,7 @@ export default function PitchVisualizer() {
             <button
               key={target.label}
               onClick={() => setSelectedTarget(index)}
-              className={`group cursor-pointer relative px-4 py-2.5 font-mono text-xs uppercase tracking-[0.16em] transition-all duration-200 ${selectedTarget === index
+              className={`group relative px-4 py-2.5 font-mono text-xs uppercase tracking-[0.16em] transition-all duration-200 ${selectedTarget === index
                   ? "bg-accent-emerald text-[#04130c]"
                   : "bg-bg-elev-1 text-text-secondary hover:text-text-primary border border-border-faint hover:border-border-soft"
                 }`}

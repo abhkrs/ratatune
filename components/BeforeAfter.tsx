@@ -6,7 +6,7 @@ export default function BeforeAfter() {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section className="relative py-32 md:py-44 bg-bg-deep overflow-hidden">
+    <section className="relative bg-bg-deep overflow-hidden section">
       <div className="section-container relative z-10" ref={ref}>
         <div className="grid lg:grid-cols-12 gap-10 mb-20">
           <div
@@ -36,7 +36,6 @@ export default function BeforeAfter() {
             className={`panel-card transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
-            style={{ transitionDelay: "300ms" }}
           >
             <div className="p-6 md:p-8">
               <div className="flex items-center justify-between mb-5 pb-4 border-b border-border-faint">
@@ -81,10 +80,9 @@ export default function BeforeAfter() {
           </div>
 
           <div
-            className={`panel-card transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-150 ${
+            className={`panel-card transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
-            style={{ transitionDelay: "450ms" }}
           >
             <div className="p-6 md:p-8">
               <div className="flex items-center justify-between mb-5 pb-4 border-b border-border-faint">

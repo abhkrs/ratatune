@@ -1,6 +1,6 @@
 export default function Benefits() {
   return (
-    <section className="relative py-32 md:py-44 bg-bg-elev-1 overflow-hidden">
+    <section className="relative bg-bg-elev-1 overflow-hidden section">
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 mb-20">
           <div className="lg:col-span-3">

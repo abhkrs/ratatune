@@ -11,7 +11,7 @@ export default function EarlyAccessCTA({ onCtaClick }: EarlyAccessCTAProps) {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section className="relative py-32 md:py-44 bg-bg-deep overflow-hidden">
+    <section className="relative bg-bg-deep overflow-hidden section">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -50,7 +50,7 @@ export default function EarlyAccessCTA({ onCtaClick }: EarlyAccessCTAProps) {
           <CTAButton
             onClick={onCtaClick}
             size="lg"
-            className={`transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-200 ${
+            className={`duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >

@@ -9,7 +9,7 @@ interface HeroProps {
 
 export default function Hero({ onCtaClick }: HeroProps) {
   return (
-    <section className="relative min-h-[100dvh] flex items-center pt-20 pb-24 overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center section overflow-hidden">
       {/* Background layers */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -36,13 +36,13 @@ export default function Hero({ onCtaClick }: HeroProps) {
               <span className="section-label" style={{ marginBottom: 0 }}>Pre-launch</span>
             </div>
 
-            <h1 className="hero-enter-2 section-head" style={{ marginBottom: "2rem", fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
+            <h1 className="hero-enter-2 section-head hero">
               Hear whether
               <br />
               your bends are <span className="highlight">actually in tune.</span>
             </h1>
 
-            <p className="hero-enter-3 section-body" style={{ fontSize: "1.125rem", marginBottom: "2.5rem" }}>
+            <p className="hero-enter-3 section-body hero">
               Ratatune listens through your microphone, isolates the bend you
               just played, and returns the exact pitch you reached - measured in
               cents against the target. No more guessing whether you landed.

@@ -72,9 +72,6 @@ export default function Header({ onCtaClick }: HeaderProps) {
               ))}
               <CTAButton onClick={onCtaClick} size="sm">
                 Get Early Access
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H3.5M9.5 2.5V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
               </CTAButton>
             </div>
 
@@ -136,8 +133,7 @@ export default function Header({ onCtaClick }: HeaderProps) {
               onCtaClick();
             }}
             size="md"
-            className={`${mobileMenuOpen ? "nav-link-reveal" : "opacity-0"}`}
-            style={{ animationDelay: mobileMenuOpen ? "300ms" : "0ms" }}
+            className={mobileMenuOpen ? "nav-link-reveal" : "opacity-0"}
           >
             Get Early Access
           </CTAButton>
