@@ -17,7 +17,7 @@ export default function ProblemSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              <span className="section-label" data-section-number="[02]">
+              <span className="tag" data-section-number="[02]">
                 The problem
               </span>
             </div>

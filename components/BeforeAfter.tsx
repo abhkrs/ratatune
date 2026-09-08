@@ -14,9 +14,8 @@ export default function BeforeAfter() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-text-secondary inline-flex items-center gap-3 mb-6">
-            <span className="w-6 h-px bg-accent-emerald" />
-            [05] Practice progression
+          <span className="tag">
+            Practice progression
           </span>
           <h2 className="display-text text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.02] text-text-primary mb-6">
             From guesswork

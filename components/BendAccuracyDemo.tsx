@@ -4,9 +4,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import PitchVisualizer from "./PitchVisualizer";
 
 const sectionLabel = () => (
-  <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-accent-emerald inline-flex items-center gap-3">
-    <span className="w-6 h-px bg-accent-emerald" />
-    [04] Bend Accuracy Demo
+  <span className="tag">
+    Bend Accuracy Demo
   </span>
 );
 
@@ -21,9 +20,8 @@ export default function BendAccuracyDemo() {
       <div className="section-container relative z-10" ref={ref}>
         {/* Header */}
         <div
-          className={`max-w-3xl mb-12 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`max-w-3xl mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           {sectionLabel()}
           <h2 className="display-text text-[clamp(1.5rem,4vw,2.75rem)] text-text-primary mt-4 mb-4">

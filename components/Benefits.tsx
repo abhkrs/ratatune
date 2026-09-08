@@ -30,9 +30,8 @@ export default function Benefits() {
       <div className="section-container relative z-10">
         {/* Header */}
         <div className="mb-16">
-          <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-text-secondary inline-flex items-center gap-3">
-            <span className="w-6 h-px bg-accent-emerald" />
-            [06] Value
+          <span className="tag">
+            The Value
           </span>
           <h2 className="display-text text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.02] text-text-primary mb-6">
             Know what to adjust

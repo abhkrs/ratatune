@@ -33,10 +33,6 @@ export default function Hero({ onCtaClick }: HeroProps) {
           {/* Left: Copy — 7 cols, asymmetric */}
           <div className="lg:col-span-7 pt-2 lg:pt-10">
             <div className="hero-enter-1 flex items-center gap-3 mb-8">
-              <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-text-secondary">
-                [01] / Hero
-              </span>
-              <span className="h-px w-12 bg-border-soft" />
               <span className="tag">Pre-launch</span>
             </div>
 

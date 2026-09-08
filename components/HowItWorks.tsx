@@ -42,19 +42,16 @@ export default function HowItWorks() {
         {/* Header — asymmetric */}
         <div className="grid lg:grid-cols-12 gap-10 mb-20">
           <div
-            className={`lg:col-span-3 transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`lg:col-span-3 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
           >
-            <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-text-secondary inline-flex items-center gap-3">
-              <span className="w-6 h-px bg-accent-emerald" />
-              [03] Process
+            <span className="tag" >
+              The Process
             </span>
           </div>
           <div
-            className={`lg:col-span-9 transition-all duration-700 delay-100 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
+            className={`lg:col-span-9 transition-all duration-700 delay-100 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
           >
             <h2 className="display-text text-[clamp(1.5rem,4vw,2.75rem)] leading-[1.02] text-text-primary mb-6">
               Ratatune tells you where
@@ -77,9 +74,8 @@ export default function HowItWorks() {
           {/* Connecting thread */}
           <div className="hidden lg:block absolute top-[44px] left-[16%] right-[16%] h-px z-0">
             <div
-              className={`h-full bg-gradient-to-r from-transparent via-border-soft to-transparent transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-              }`}
+              className={`h-full bg-gradient-to-r from-transparent via-border-soft to-transparent transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+                }`}
               style={{ transformOrigin: "left" }}
             />
           </div>
@@ -90,9 +86,8 @@ export default function HowItWorks() {
               return (
                 <div
                   key={step.number}
-                  className={`relative transition-all duration-700 ${
-                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-                  }`}
+                  className={`relative transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                    }`}
                   style={{ transitionDelay: `${200 + i * 180}ms` }}
                 >
                   <div className="flex items-start gap-5">
