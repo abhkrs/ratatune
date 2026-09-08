@@ -25,8 +25,11 @@ export default function Header({ onCtaClick }: HeaderProps) {
   }, []);
 
   const navLinks = [
-    { href: "#how-it-works", label: "How it works" },
+    { href: "#the-problem", label: "The problem" },
+    { href: "#how-it-works", label: "The Process" },
     { href: "#bend-accuracy", label: "The demo" },
+    { href: "#before-after", label: "Before / After" },
+    { href: "#the-value", label: "The Value" },
   ];
 
   return (

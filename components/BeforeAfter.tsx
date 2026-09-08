@@ -6,7 +6,7 @@ export default function BeforeAfter() {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section className="relative bg-bg-deep overflow-hidden section">
+    <section id="before-after" className="relative bg-bg-deep overflow-hidden section">
       <div className="section-container relative z-10" ref={ref}>
         <div className="grid lg:grid-cols-12 gap-10 mb-20">
           <div

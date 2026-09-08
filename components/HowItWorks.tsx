@@ -54,7 +54,7 @@ export default function HowItWorks() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="section-label">Process</span>
+            <span className="section-label">The Process</span>
           </div>
           <div
             className={`lg:col-span-9 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${

@@ -6,7 +6,7 @@ export default function ProblemSection() {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section className="relative bg-bg-base overflow-hidden section">
+    <section id="the-problem" className="relative bg-bg-base overflow-hidden section">
       <div className="section-container relative z-10" ref={ref}>
         <div className="grid lg:grid-cols-12 gap-10 mb-20">
           <div className={`lg:col-span-3 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>

@@ -36,6 +36,11 @@ export const metadata: Metadata = {
     "Ratatune",
     "music practice app",
   ],
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
   openGraph: {
     title: "Ratatune — Finally Hear Whether Your Bends Are Actually In Tune",
     description:
