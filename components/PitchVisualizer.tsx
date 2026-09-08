@@ -36,7 +36,7 @@ const bendTargets: BendTarget[] = [
 ];
 
 export default function PitchVisualizer() {
-  const { ref, isVisible } = useScrollAnimation(0.2);
+  const { isVisible } = useScrollAnimation(0.2);
   const [selectedTarget, setSelectedTarget] = useState(1);
 
   const current = bendTargets[selectedTarget];

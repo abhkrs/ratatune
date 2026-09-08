@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
 interface EarlyAccessModalProps {
@@ -18,23 +18,14 @@ export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalPr
   const modalRef = useRef<HTMLDivElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
 
-  // Focus trap within modal
-  const focusableElements = useCallback(() => {
-    const el = modalRef.current;
-    if (!el) return [];
-    const selectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-    return Array.from(el.querySelectorAll(selectors)).filter(
-      (el): el is HTMLElement => (el as HTMLElement).offsetParent !== null
-    );
-  }, []);
-
   // Set initial focus
   useEffect(() => {
-    if (isOpen && emailInputRef.current) {
-      setTimeout(() => emailInputRef.current?.focus(), 100);
+    const el = emailInputRef.current;
+    if (isOpen && el) {
+      setTimeout(() => el.focus(), 100);
     }
     return () => {
-      emailInputRef.current?.blur();
+      el?.blur();
     };
   }, [isOpen]);
 
@@ -42,6 +33,15 @@ export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalPr
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
+    };
+
+    const focusableElements = () => {
+      const el = modalRef.current;
+      if (!el) return [];
+      const selectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+      return Array.from(el.querySelectorAll(selectors)).filter(
+        (el): el is HTMLElement => (el as HTMLElement).offsetParent !== null
+      );
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -76,14 +76,11 @@ export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalPr
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [isOpen, onClose, focusableElements]);
+  }, [isOpen, onClose]);
 
-  const handleBackdropClick = useCallback(
-    (e: React.MouseEvent) => {
-      if (e.target === e.currentTarget) onClose();
-    },
-    [onClose]
-  );
+  const handleBackdropClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) onClose();
+  };
 
   const validateEmail = (value: string) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

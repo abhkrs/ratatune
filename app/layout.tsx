@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   title: "Ratatune — Harmonica Bend Accuracy | Know Where Your Bends Actually Land",
   description:
     "Ratatune listens to your harmonica bends through the microphone and shows you exactly where your note landed. Stop guessing — get measurable pitch feedback in real time. Join the early-access list.",
+  metadataBase: new URL("https://ratatune.app"),
   keywords: [
     "harmonica",
     "bend accuracy",

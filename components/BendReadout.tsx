@@ -4,10 +4,9 @@ import { useEffect, useRef } from "react";
 
 interface BendReadoutProps {
   compact?: boolean;
-  animate?: boolean;
 }
 
-export default function BendReadout({ compact = false, animate = true }: BendReadoutProps) {
+export default function BendReadout({ compact = false }: BendReadoutProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
