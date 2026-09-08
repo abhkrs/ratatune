@@ -8,29 +8,37 @@ export default function BeforeAfter() {
   return (
     <section className="relative py-32 md:py-44 bg-bg-deep overflow-hidden">
       <div className="section-container relative z-10" ref={ref}>
-        <div
-          className={`max-w-2xl mb-16 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 blur-sm"
-          }`}
-        >
-          <span className="section-label">Practice progression</span>
-          <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-5 text-balance">
-            From guesswork
-            <br />
-            to informed adjustment
-          </h2>
-          <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-lg">
-            The value is not just in seeing a number. It is knowing what
-            to change on the very next attempt.
-          </p>
+        <div className="grid lg:grid-cols-12 gap-10 mb-20">
+          <div
+            className={`lg:col-span-3 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <span className="section-label">Practice progression</span>
+          </div>
+          <div
+            className={`lg:col-span-9 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-5 text-balance">
+              From guesswork
+              <br />
+              to informed adjustment
+            </h2>
+            <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl">
+              The value is not just in seeing a number. It is knowing what
+              to change on the very next attempt.
+            </p>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 max-w-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           <div
             className={`panel-card transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
-            style={{ transitionDelay: "100ms" }}
+            style={{ transitionDelay: "300ms" }}
           >
             <div className="p-6 md:p-8">
               <div className="flex items-center justify-between mb-5 pb-4 border-b border-border-faint">
@@ -78,7 +86,7 @@ export default function BeforeAfter() {
             className={`panel-card transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-150 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
-            style={{ transitionDelay: "250ms" }}
+            style={{ transitionDelay: "450ms" }}
           >
             <div className="p-6 md:p-8">
               <div className="flex items-center justify-between mb-5 pb-4 border-b border-border-faint">
@@ -123,7 +131,7 @@ export default function BeforeAfter() {
           </div>
         </div>
 
-        <p className="mt-10 text-center text-xs text-text-tertiary font-mono tracking-wider">
+        <p className="mt-8 text-center text-xs text-text-tertiary font-mono tracking-wider">
           Visual demonstration - not actual user data
         </p>
       </div>

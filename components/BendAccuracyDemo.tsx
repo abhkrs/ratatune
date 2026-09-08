@@ -3,40 +3,44 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import PitchVisualizer from "./PitchVisualizer";
 
-const sectionLabel = () => (
-  <span className="tag">
-    Bend Accuracy Demo
-  </span>
-);
-
 export default function BendAccuracyDemo() {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section id="bend-accuracy" className="relative py-28 md:py-36 bg-bg-deep border-y border-border-faint overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsla(160,70%,50%,0.03)_0%,_transparent_70%)] pointer-events-none" />
-
+    <section id="bend-accuracy" className="relative py-32 md:py-44 bg-bg-deep overflow-hidden">
       <div className="section-container relative z-10" ref={ref}>
-        {/* Header */}
-        <div
-          className={`max-w-3xl mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+        {/* Tag + text in one row, matching HowItWorks pattern */}
+        <div className="grid lg:grid-cols-12 gap-10 mb-20">
+          <div
+            className={`lg:col-span-3 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
-        >
-          {sectionLabel()}
-          <h2 className="display-text text-[clamp(1.5rem,4vw,2.75rem)] text-text-primary mt-4 mb-4">
-            See the bend.{" "}
-            <span className="text-text-secondary">Not just the score.</span>
-          </h2>
-          <p className="text-lg text-text-secondary leading-relaxed max-w-xl">
-            A bend isn&apos;t simply right or wrong. Ratatune shows you how
-            the note landed compared with the target pitch.
-          </p>
+          >
+            <span className="section-label">Bend Accuracy Demo</span>
+          </div>
+          <div
+            className={`lg:col-span-9 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-6 text-balance">
+              See the bend.{" "}
+              <span className="text-text-secondary">Not just the score.</span>
+            </h2>
+            <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl">
+              A bend isn&apos;t simply right or wrong. Ratatune shows you how
+              the note landed compared with the target pitch.
+            </p>
+          </div>
         </div>
 
-        {/* Main Pitch Visualizer */}
-        <div className="relative">
-          <div className="relative">
+        {/* Infographic in next row, centered */}
+        <div className="max-w-4xl mx-auto">
+          <div
+            className={`panel-card transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-12 scale-[0.98]"
+            }`}
+          >
             <PitchVisualizer />
           </div>
         </div>

@@ -8,21 +8,20 @@ export default function ProblemSection() {
   return (
     <section className="relative py-32 md:py-44 bg-bg-base overflow-hidden">
       <div className="section-container relative z-10" ref={ref}>
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-          <div className="lg:col-span-7">
-            <div
-              className={`mb-8 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              <span className="section-label">The problem</span>
-            </div>
-
-            <h2
-              className={`display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] mb-10 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
+        <div className="grid lg:grid-cols-12 gap-10 mb-20">
+          <div
+            className={`lg:col-span-3 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <span className="section-label">The problem</span>
+          </div>
+          <div
+            className={`lg:col-span-9 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-100 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
+          >
+            <h2 className="display-text text-[clamp(1.75rem,4vw,3rem)] leading-[1.05] text-text-primary mb-5 text-balance">
               You can hear the bend.
               <br />
               <span className="text-text-secondary italic font-display font-medium">
@@ -33,27 +32,22 @@ export default function ProblemSection() {
                 where it landed?
               </span>
             </h2>
-
-            <div
-              className={`space-y-5 text-base md:text-lg text-text-secondary leading-[1.75] max-w-xl transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-200 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              <p>
-                Bending is changing the pitch of a note through breath and mouth
-                shape - not a hole or button. The hard part is quantifying how
-                far the note moved.
-              </p>
-              <p>
-                When you are practicing, &ldquo;that sounds a little off&rdquo;
-                is not enough. You need the precise distance between your
-                note and the target.
-              </p>
-            </div>
+            <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl">
+              Bending is changing the pitch of a note through breath and mouth
+              shape - not a hole or button. The hard part is quantifying how
+              far the note moved.
+            </p>
+            <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl mt-4">
+              When you are practicing, &ldquo;that sounds a little off&rdquo;
+              is not enough. You need the precise distance between your
+              note and the target.
+            </p>
           </div>
+        </div>
 
+        <div className="max-w-2xl mx-auto">
           <div
-            className={`lg:col-span-5 transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-300 ${
+            className={`panel-card transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-300 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
