@@ -1,6 +1,7 @@
 "use client";
 
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import CTAButton from "./CTAButton";
 
 interface EarlyAccessCTAProps {
   onCtaClick: () => void;
@@ -46,19 +47,15 @@ export default function EarlyAccessCTA({ onCtaClick }: EarlyAccessCTAProps) {
         </div>
 
         <div className="flex justify-center">
-          <button
+          <CTAButton
             onClick={onCtaClick}
-            className={`btn-magnetic text-base transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-200 ${
+            size="lg"
+            className={`transition-all duration-800 ease-[cubic-bezier(0.16,1,0.3,1)] delay-200 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
             Get Early Access
-            <span className="btn-icon-wrap">
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M2.5 9.5L9.5 2.5M9.5 2.5H3.5M9.5 2.5V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </span>
-          </button>
+          </CTAButton>
         </div>
       </div>
     </section>

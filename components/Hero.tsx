@@ -1,6 +1,7 @@
 "use client";
 
 import BendReadout from "./BendReadout";
+import CTAButton from "./CTAButton";
 
 interface HeroProps {
   onCtaClick: () => void;
@@ -48,20 +49,18 @@ export default function Hero({ onCtaClick }: HeroProps) {
             </p>
 
             <div className="hero-enter-3 flex flex-wrap items-center gap-5">
-              <button onClick={onCtaClick} className="btn-primary group">
+              <CTAButton onClick={onCtaClick} size="lg">
                 Get Early Access
-                <svg width="13" height="13" viewBox="0 0 12 12" fill="none" className="ml-1 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">
-                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H3.5M9.5 2.5V8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-              <button
+              </CTAButton>
+              <CTAButton
+                variant="ghost"
                 onClick={() => {
                   document.getElementById("bend-accuracy")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="btn-ghost font-mono text-xs uppercase tracking-[0.18em] text-text-secondary hover:text-text-primary"
+                size="sm"
               >
-                See it in action ↓
-              </button>
+                See it in action
+              </CTAButton>
             </div>
 
           </div>

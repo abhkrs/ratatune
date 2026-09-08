@@ -1,5 +1,7 @@
 "use client";
 
+import CTAButton from "./CTAButton";
+
 interface FooterProps {
   onCtaClick: () => void;
 }
@@ -23,12 +25,9 @@ export default function Footer({ onCtaClick }: FooterProps) {
           </p>
 
           {/* CTA */}
-          <button
-            onClick={onCtaClick}
-            className="btn-ghost font-mono text-xs uppercase tracking-[0.18em] text-accent-emerald hover:text-accent-emerald"
-          >
-            Get Early Access →
-          </button>
+          <CTAButton onClick={onCtaClick} variant="ghost" size="sm">
+            Get Early Access
+          </CTAButton>
         </div>
 
         {/* Bottom */}

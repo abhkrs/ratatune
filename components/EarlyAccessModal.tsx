@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import CTAButton from "./CTAButton";
 
 interface EarlyAccessModalProps {
   isOpen: boolean;
@@ -9,15 +10,30 @@ interface EarlyAccessModalProps {
 
 export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalProps) {
   const [email, setEmail] = useState("");
+  const [experience, setExperience] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
   const emailRef = useRef<HTMLInputElement>(null);
 
-  // ponytail: focus input on open; no reset needed for pre-launch waitlist
+  // Focus email input on open
   useEffect(() => {
     if (isOpen) {
       setTimeout(() => emailRef.current?.focus(), 100);
     }
   }, [isOpen]);
+
+  const handleSubmit = () => {
+    setError("");
+    if (!email.trim()) {
+      setError("Email is required.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setSubmitted(true);
+  };
 
   if (!isOpen) return null;
 
@@ -63,11 +79,7 @@ export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalPr
               Ratatune is currently in pre-launch. Leave your email and we&apos;ll keep you posted.
             </p>
 
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-              setSubmitted(true);
-            }} className="space-y-4">
+            <div className="space-y-4">
               <div>
                 <label htmlFor="email" className="block text-xs font-semibold tracking-wider uppercase text-text-secondary mb-1.5">
                   Email address <span className="text-accent-coral" aria-hidden="true">*</span>
@@ -78,22 +90,54 @@ export default function EarlyAccessModal({ isOpen, onClose }: EarlyAccessModalPr
                   id="email"
                   type="email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => { setEmail(e.target.value); setError(""); }}
                   placeholder="you@example.com"
                   autoComplete="email"
                   required
                   aria-required="true"
-                  className="w-full px-4 py-3 rounded-lg bg-bg-dark border border-border-subtle text-text-primary placeholder:text-text-secondary/50 text-sm outline-none transition-all focus:ring-2 focus:ring-accent-emerald/40"
+                  aria-invalid={!!error}
+                  aria-describedby={error ? "email-error" : undefined}
+                  className="w-full px-4 py-3 rounded-lg border border-border-faint bg-bg-elev-1 text-text-primary placeholder:text-text-secondary/40 text-sm outline-none transition-all focus:border-accent-emerald/50"
                 />
+                {error && (
+                  <p id="email-error" className="mt-1.5 text-xs text-accent-coral" role="alert">
+                    {error}
+                  </p>
+                )}
               </div>
 
-              <button
-                type="submit"
-                className="btn-primary w-full mt-2"
-              >
-                Request Early Access
-              </button>
-            </form>
+              <div>
+                <label htmlFor="experience" className="block text-xs font-semibold tracking-wider uppercase text-text-secondary mb-1.5">
+                  How long have you been playing harmonica?{" "}
+                  <span className="text-text-tertiary normal-case tracking-normal font-normal">
+                    (optional)
+                  </span>
+                </label>
+                <select
+                  id="experience"
+                  value={experience}
+                  onChange={(e) => setExperience(e.target.value)}
+                  className="w-full px-4 py-3 rounded-lg border border-border-faint bg-bg-elev-1 text-text-primary text-sm outline-none transition-all focus:border-accent-emerald/50 appearance-none cursor-pointer"
+                  style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238a95a8' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "right 1rem center",
+                  }}
+                >
+                  <option value="">Select...</option>
+                  <option value="<1">Less than 1 year</option>
+                  <option value="1-3">1–3 years</option>
+                  <option value="3-5">3–5 years</option>
+                  <option value="5+">5+ years</option>
+                </select>
+              </div>
+
+              <div className="flex justify-center mt-6">
+                <CTAButton onClick={handleSubmit} className="mt-2">
+                  Request Early Access
+                </CTAButton>
+              </div>
+            </div>
           </>
         )}
       </div>

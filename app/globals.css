@@ -222,35 +222,51 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   cursor: pointer;
   letter-spacing: -0.01em;
-  transition: transform 0.4s var(--ease-out-expo), background 0.3s var(--ease-soft);
+  transition: background 0.3s var(--ease-soft);
   will-change: transform;
   position: relative;
+  overflow: hidden;
+}
+
+.btn-magnetic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 19, 12, 0.15);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out-expo);
+  z-index: 0;
+}
+
+.btn-magnetic:hover::before {
+  transform: scaleX(1);
 }
 
 .btn-magnetic:hover {
   background: #5ce5a8;
-  transform: translateY(-2px);
 }
 
 .btn-magnetic:active {
-  transform: scale(0.97) translateY(0);
+  transform: scale(0.97);
 }
 
-.btn-magnetic .btn-icon-wrap {
+.btn-magnetic > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-magnetic .cta-arrow {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
-  border-radius: 50%;
-  background: rgba(4, 19, 12, 0.12);
-  transition: transform 0.4s var(--ease-out-expo), background 0.3s var(--ease-soft);
   flex-shrink: 0;
+  transition: transform 0.3s var(--ease-out-expo);
+  transform-origin: center;
 }
 
-.btn-magnetic:hover .btn-icon-wrap {
-  transform: translate(2px, -2px) scale(1.1);
-  background: rgba(4, 19, 12, 0.2);
+.btn-magnetic:hover .cta-arrow {
+  transform: rotate(45deg);
 }
 
 /* ── Ghost link button ── */
@@ -288,6 +304,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-ghost:hover::after {
   transform: scaleX(1);
+}
+
+.btn-ghost .cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease-out-expo);
+  transform-origin: center;
+}
+
+.btn-ghost:hover .cta-arrow {
+  transform: rotate(45deg);
 }
 
 /* ── Noise overlay ── */
