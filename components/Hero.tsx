@@ -28,6 +28,25 @@ export default function Hero({ onCtaClick }: HeroProps) {
         }}
       />
 
+      {/* Audio wave visualization - subtle background decoration */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-48 opacity-[0.03]">
+          <div className="flex items-end justify-center gap-[2px] h-full px-4">
+            {[...Array(50)].map((_, i) => (
+              <div
+                key={i}
+                className="w-[3px] bg-accent-emerald rounded-t-sm"
+                style={{
+                  height: `${30 + Math.sin(i * 0.3) * 40}%`,
+                  animation: `audio-wave ${1.2 + (i % 5) * 0.2}s ease-in-out infinite alternate`,
+                  animationDelay: `${i * 0.04}s`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Left: Copy — 7 cols, asymmetric */}
