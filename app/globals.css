@@ -6,14 +6,14 @@
    ============================================================ */
 
 @theme inline {
-  /* Core neutrals — deep black with emerald/blue undertones */
-  --color-bg-deepest: #030508;
-  --color-bg-deep: #070a10;
-  --color-bg-base: #0b0f18;
-  --color-bg-elev-1: #111827;
-  --color-bg-elev-2: #161e2e;
-  --color-bg-card: #0e1420;
-  --color-bg-card-hover: #121c2d;
+  /* Core neutrals — dark, minimal blue tint */
+  --color-bg-deepest: #020304;
+  --color-bg-deep: #050608;
+  --color-bg-base: #07090e;
+  --color-bg-elev-1: #0a0c12;
+  --color-bg-elev-2: #0d0f16;
+  --color-bg-card: #080a10;
+  --color-bg-card-hover: #0b0e14;
 
   /* Accents */
   --color-accent-emerald: #34d399;
@@ -27,10 +27,10 @@
   --color-text-tertiary: #5d6577;
   --color-text-muted: #3d475c;
 
-  /* Borders — cool blue/gray tones */
-  --color-border-faint: #1a2235;
-  --color-border-soft: #243049;
-  --color-border-strong: #2d3d56;
+  /* Borders — subtle cool gray */
+  --color-border-faint: #1a2030;
+  --color-border-soft: #243040;
+  --color-border-strong: #2d3a4c;
 
   /* Typography */
   --font-display: var(--font-syne), "Syne", system-ui, sans-serif;
