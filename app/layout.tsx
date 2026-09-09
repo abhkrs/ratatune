@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Syne, Space_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Fraunces, Space_Mono } from "next/font/google";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -8,11 +8,12 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const syne = Syne({
+const fraunces = Fraunces({
   variable: "--font-syne",
   subsets: ["latin"],
   display: "swap",
-  weight: ["500", "700", "800"],
+  weight: ["300", "400", "600", "700", "900"],
+  style: ["normal", "italic"],
 });
 
 const spaceMono = Space_Mono({
@@ -55,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${plusJakarta.variable} ${syne.variable} ${spaceMono.variable} antialiased selection:bg-emerald-500/30 selection:text-emerald-300`}
+      className={`${plusJakarta.variable} ${fraunces.variable} ${spaceMono.variable} antialiased selection:bg-emerald-500/30 selection:text-emerald-300`}
     >
       <body className="min-h-screen flex flex-col bg-[#fff9f5] text-[#1e1b18] font-sans relative overflow-x-hidden">{children}</body>
     </html>

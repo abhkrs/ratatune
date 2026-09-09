@@ -24,7 +24,7 @@ export default function BendAccuracyDemo() {
             }`}
           >
             <h2 className="section-head mb-6 text-balance">
-              See the bend. <span className="highlight">Not just the score.</span>
+              See the bend. <span className="highlight block">Not just the score.</span>
             </h2>
             <p className="text-base md:text-lg text-text-secondary leading-[1.7] max-w-xl">
               A bend isn&apos;t simply right or wrong. Ratatune shows you how

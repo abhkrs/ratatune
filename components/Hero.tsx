@@ -81,9 +81,7 @@ export default function Hero({ onCtaClick }: HeroProps) {
             </div>
 
             <h1 className="hero-enter-2 section-head hero">
-              Hear whether
-              <br />
-              your bends are <span className="highlight">actually in tune.</span>
+              Hear whether your bends are <span className="highlight">actually in tune.</span>
             </h1>
 
             <p className="hero-enter-3 section-body hero">
