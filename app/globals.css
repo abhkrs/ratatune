@@ -1,29 +1,33 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Ratatune Design System
+   Ratatune Design System — Light Peach Theme
    ============================================================ */
 
 @theme inline {
-  --color-bg-deepest: #020304;
-  --color-bg-deep: #050608;
-  --color-bg-base: #07090e;
-  --color-bg-elev-1: #0a0c12;
-  --color-bg-elev-2: #0d0f16;
-  --color-bg-card: #080a10;
-  --color-bg-card-hover: #0b0e14;
+  --color-bg-deepest: #fff9f5;
+  --color-bg-deep: #fff7f2;
+  --color-bg-base: #fff4ed;
+  --color-bg-elev-1: #ffeee4;
+  --color-bg-elev-2: #ffe8da;
+  --color-bg-card: #fff1e9;
+  --color-bg-card-hover: #ffeadf;
 
-  --color-accent-emerald: #34d399;
-  --color-accent-coral: #ff7a5b;
+  /* Alternating section backgrounds */
+  --color-section-a: #fff7f2;
+  --color-section-b: #ffeee4;
 
-  --color-text-primary: #f0f4f8;
-  --color-text-secondary: #8a95a8;
-  --color-text-tertiary: #5d6577;
-  --color-text-muted: #3d475c;
+  --color-accent-emerald: #0d9668;
+  --color-accent-coral: #e05a3a;
 
-  --color-border-faint: #1a2030;
-  --color-border-soft: #243040;
-  --color-border-strong: #2d3a4c;
+  --color-text-primary: #1e1b18;
+  --color-text-secondary: #6b5e52;
+  --color-text-tertiary: #9a8d82;
+  --color-text-muted: #c4b8ad;
+
+  --color-border-faint: #f0ddd0;
+  --color-border-soft: #e5cfc0;
+  --color-border-strong: #d4bfb0;
 
   --font-display: var(--font-syne), "Syne", system-ui, sans-serif;
   --font-body: var(--font-sans), "Plus Jakarta Sans", system-ui, sans-serif;
@@ -109,8 +113,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.45); }
-  100% { box-shadow: 0 0 0 14px rgba(52, 211, 153, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(13, 150, 104, 0.35); }
+  100% { box-shadow: 0 0 0 14px rgba(13, 150, 104, 0); }
 }
 
 @keyframes pulse-dot {
@@ -175,14 +179,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 2.5rem;
 }
 
-/* ── Section body (uniform across all sections) ── */
-.section-body {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-text-secondary);
-  max-width: 42rem;
-}
-
 /* ── Section label (uniform eyebrow) ── */
 .section-label {
   display: inline-flex;
@@ -202,16 +198,16 @@ h1, h2, h3, h4, h5, h6 {
   width: 1.5rem;
   height: 1px;
   background: var(--color-accent-emerald);
-  opacity: 0.5;
+  opacity: 0.6;
   flex-shrink: 0;
 }
 
-/* ── Panel card (single border + corner ticks) ── */
+/* ── Panel card (light theme) ── */
 .panel-card {
-  background: linear-gradient(160deg, var(--color-bg-elev-1) 0%, var(--color-bg-elev-2) 100%);
+  background: linear-gradient(160deg, #fff5ee 0%, #ffeee4 100%);
   border: 1px solid var(--color-border-faint);
   border-radius: 1rem;
-  box-shadow: inset 0 1px 0 rgba(240, 244, 248, 0.04), 0 16px 40px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 3px rgba(180, 140, 110, 0.06), 0 8px 24px rgba(180, 140, 110, 0.08);
   overflow: hidden;
   position: relative;
 }
@@ -225,7 +221,7 @@ h1, h2, h3, h4, h5, h6 {
   border-color: var(--color-accent-emerald);
   border-style: solid;
   border-width: 0;
-  opacity: 0.4;
+  opacity: 0.35;
   pointer-events: none;
 }
 
@@ -243,13 +239,13 @@ h1, h2, h3, h4, h5, h6 {
   border-right-width: 1px;
 }
 
-/* ── Glass card (modal, overlays) ── */
+/* ── Glass card (modal, overlays — light theme) ── */
 .glass-card {
-  background: rgba(8, 10, 16, 0.8);
+  background: rgba(255, 247, 242, 0.92);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
-  border: 1px solid rgba(240, 244, 248, 0.08);
-  box-shadow: 0 0 0 1px rgba(240, 244, 248, 0.04), 0 32px 80px rgba(2, 3, 5, 0.7), inset 0 1px 0 rgba(240, 244, 248, 0.06);
+  border: 1px solid rgba(224, 192, 168, 0.4);
+  box-shadow: 0 0 0 1px rgba(224, 192, 168, 0.15), 0 32px 80px rgba(180, 140, 110, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6);
   border-radius: 1.25rem;
 }
 
@@ -260,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.75rem;
   padding: 1rem 1.5rem 1rem 1.375rem;
   background: var(--color-accent-emerald);
-  color: #04130c;
+  color: #ffffff;
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.9375rem;
@@ -278,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(4, 19, 12, 0.15);
+  background: rgba(0, 0, 0, 0.1);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s var(--ease-out-expo);
@@ -290,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-magnetic:hover {
-  background: #5ce5a8;
+  background: #0aad7a;
 }
 
 .btn-magnetic:active {
@@ -365,13 +361,13 @@ h1, h2, h3, h4, h5, h6 {
   transform: rotate(45deg);
 }
 
-/* ── Noise overlay ── */
+/* ── Noise overlay (subtle on light) ── */
 .noise-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.03;
+  opacity: 0.018;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;

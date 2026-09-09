@@ -41,7 +41,7 @@ export default function ProblemSection() {
             <div className="relative h-48">
               <div className="absolute top-1/2 left-0 right-0 h-px bg-text-secondary/25" />
               <div className="absolute top-1/2 -translate-y-1/2 left-0 flex items-center gap-2">
-                <span className="w-2 h-2 bg-text-primary" />
+                <span className="w-2 h-2 bg-text-primary rounded-full" />
                 <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-text-secondary">Target -2 st</span>
               </div>
 
@@ -70,7 +70,7 @@ export default function ProblemSection() {
 
               <div className={`absolute top-[80%] right-[2%] -translate-y-1/2 transition-all duration-1000 delay-700 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-50"}`}>
                 <div className="relative -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-3 h-3 bg-accent-coral rotate-45" />
+                  <div className="w-3 h-3 bg-accent-coral rotate-45 rounded-full" />
                 </div>
                 <span className="absolute top-4 left-1/2 -translate-x-1/2 font-mono text-[10px] tracking-[0.16em] uppercase text-accent-coral whitespace-nowrap">Your bend</span>
               </div>

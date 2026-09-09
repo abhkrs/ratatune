@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${plusJakarta.variable} ${syne.variable} ${spaceMono.variable} antialiased selection:bg-emerald-500/30 selection:text-emerald-300`}
     >
-      <body className="min-h-screen flex flex-col bg-[#07090e] text-[#f0f4f8] font-sans relative overflow-x-hidden">{children}</body>
+      <body className="min-h-screen flex flex-col bg-[#fff9f5] text-[#1e1b18] font-sans relative overflow-x-hidden">{children}</body>
     </html>
   );
 }

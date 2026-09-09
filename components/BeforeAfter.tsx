@@ -72,7 +72,6 @@ export default function BeforeAfter() {
               <div className="flex items-center justify-between mb-5 pb-4 border-b border-border-faint">
                 <div className="flex items-center gap-3">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-accent-coral/30 opacity-75 animate-[pulse-ring_1.8s_ease-out_infinite]" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-coral" />
                   </span>
                   <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-accent-coral">
@@ -140,7 +139,6 @@ export default function BeforeAfter() {
               <div className="flex items-center justify-between mb-5 pb-4 border-b border-border-faint">
                 <div className="flex items-center gap-3">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-accent-emerald/30 opacity-75 animate-[pulse-ring_1.8s_ease-out_infinite]" />
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-emerald" />
                   </span>
                   <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-accent-emerald">

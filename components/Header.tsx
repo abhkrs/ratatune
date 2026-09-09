@@ -41,7 +41,7 @@ export default function Header({ onCtaClick }: HeaderProps) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           scrolled
-            ? "bg-[#06070a]/85 backdrop-blur-2xl border-b border-[#1e2738]"
+            ? "bg-[#fff9f5]/85 backdrop-blur-2xl border-b border-[#f0ddd0]"
             : "bg-transparent border-b border-transparent"
         }`}
       >
@@ -109,8 +109,8 @@ export default function Header({ onCtaClick }: HeaderProps) {
       <div
         className={`fixed inset-0 z-30 flex flex-col items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           mobileMenuOpen
-            ? "bg-[#050608]/95 backdrop-blur-3xl opacity-100 pointer-events-auto"
-            : "bg-[#050608]/95 backdrop-blur-3xl opacity-0 pointer-events-none"
+            ? "bg-[#fff9f5]/95 backdrop-blur-3xl opacity-100 pointer-events-auto"
+            : "bg-[#fff9f5]/95 backdrop-blur-3xl opacity-0 pointer-events-none"
         }`}
         role="dialog"
         aria-modal="true"
