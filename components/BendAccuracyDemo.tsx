@@ -7,7 +7,7 @@ export default function BendAccuracyDemo() {
   const { ref, isVisible } = useScrollAnimation(0.1);
 
   return (
-    <section id="bend-accuracy" className="relative bg-bg-deep overflow-hidden section">
+    <section id="bend-accuracy" className="relative bg-bg-base overflow-hidden section">
       <div className="section-container relative z-10" ref={ref}>
         {/* Tag + text in one row, matching HowItWorks pattern */}
         <div className="grid lg:grid-cols-12 gap-10 mb-20">

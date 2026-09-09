@@ -11,7 +11,7 @@ export default function EarlyAccessCTA({ onCtaClick }: EarlyAccessCTAProps) {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section className="relative bg-bg-deep overflow-hidden section">
+    <section className="relative bg-bg-elev-1 overflow-hidden section">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{

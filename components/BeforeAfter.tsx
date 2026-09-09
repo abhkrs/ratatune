@@ -36,7 +36,7 @@ export default function BeforeAfter() {
   }, [isVisible]);
 
   return (
-    <section id="before-after" className="relative bg-bg-deep overflow-hidden section">
+    <section id="before-after" className="relative bg-bg-elev-1 overflow-hidden section">
       <div className="section-container relative z-10" ref={ref}>
         <div className="grid lg:grid-cols-12 gap-10 mb-20">
           <div

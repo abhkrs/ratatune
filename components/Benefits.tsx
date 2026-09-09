@@ -1,6 +1,6 @@
 export default function Benefits() {
   return (
-    <section id="the-value" className="relative bg-bg-elev-1 overflow-hidden section">
+    <section id="the-value" className="relative bg-bg-base overflow-hidden section">
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 mb-20">
           <div className="lg:col-span-3">

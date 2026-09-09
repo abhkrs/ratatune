@@ -45,7 +45,7 @@ export default function HowItWorks() {
   const { ref, isVisible } = useScrollAnimation(0.15);
 
   return (
-    <section id="how-it-works" className="relative bg-bg-base overflow-hidden section">
+    <section id="how-it-works" className="relative bg-bg-elev-1 overflow-hidden section">
       <div className="section-container relative z-10" ref={ref}>
         {/* Header */}
         <div className="grid lg:grid-cols-12 gap-10 mb-20">

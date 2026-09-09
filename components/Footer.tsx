@@ -8,7 +8,7 @@ interface FooterProps {
 
 export default function Footer({ onCtaClick }: FooterProps) {
   return (
-    <footer className="relative py-12 bg-bg-deep border-t border-border-faint">
+    <footer className="relative py-12 bg-bg-deepest border-t border-border-faint">
       <div className="section-container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
